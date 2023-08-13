@@ -1,0 +1,22 @@
+{
+  "name": "sun_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sysnord/Sun_node.git"
+  },
+  "author": "Tikhomirov Alexander",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sysnord/Sun_node/issues"
+  },
+  "homepage": "https://github.com/Sysnord/Sun_node#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
