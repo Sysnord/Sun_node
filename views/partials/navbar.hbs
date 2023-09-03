@@ -1,0 +1,24 @@
+  <nav class=" blue darken-1">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">Солнышко</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        {{#if isMain}}
+          <li class="active"><a href="/">Главная</a></li>
+        {{else}}
+          <li><a href="/">Главная</a></li>
+        {{/if}}
+
+        {{#if isAdd}}
+          <li class="active"><a href="/add">Внесение данных</a></li>
+        {{else}}
+          <li><a href="/add">Внесение данных</a></li>
+        {{/if}}
+
+        {{#if isReports}}
+          <li class="active"><a href="/reports">Отчеты</a></li>
+        {{else}}
+          <li><a href="/reports">Отчеты</a></li>
+        {{/if}}
+      </ul>
+    </div>
+  </nav>

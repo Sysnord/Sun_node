@@ -1,23 +1,29 @@
 const express = require('express');
-const app = express();
+const path = require('path');
 const exphbs = require('express-handlebars');
 
-const PORT = process.env.PORT || 3000;
+const app = express();
+
+const mainRoutes = require('./routes/main');
+const addRoutes = require('./routes/add');
+const reportRoutes = require('./routes/reports');
+
 const hbs = exphbs.create({
-  defaultLayout : 'main',
-  extname : 'hbs'
+  defaultLayout: 'main',
+  extname: 'hbs'
 });
 
-app.engine('hbs',hbs.engine);
-app.set('view engine','hbs');
-app.set('views','views');
+app.engine('hbs', hbs.engine);
+app.set('view engine', 'hbs');
+app.set('views', 'views');
 
-app.get('/',(req,res)=>{
-  res.render('index');
-})
-app.get('/about',(req,res)=>{
-  res.render('about');
-})
-app.listen(PORT,()=>{
-    console.log(`Server is running on port ${PORT}`);
-})
+app.use(express.static('public'));
+app.use('/',mainRoutes);
+app.use('/add',addRoutes);
+app.use('/reports',reportRoutes);
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`)
+});
